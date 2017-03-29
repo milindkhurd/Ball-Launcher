@@ -1,0 +1,73 @@
+1) Setup
+	ring setup tone
+	set startup timer
+	read previous setting from EROM
+	move spinner to top position
+	move spinner to preset position
+	set the ball feed rate, ball spin speed, horizontal position, vertical position 
+	
+	
+give pause of 2 - timetaken till here secs before starting
+stop setup tone
+
+beer to indicate game start
+
+Everytime when 0 position is passed check if other 2 sensor values are high - in case of any anamoly reset.
+
+encoder sensor 0 1, when sensor 1 is high, loop for sensor 0 to be high, when both high count steps to move if = then stop else increment step and keep moving.
+
+
+
+#include <Servo.h> 
+ 
+Servo myservo;  // create servo object to control a servo 
+                // twelve servo objects can be created on most boards
+ 
+int pos = 90;    // variable to store the servo position 
+ 
+void setup() 
+{ 
+  myservo.attach(9);  // attaches the servo on pin 9 to the servo object 
+  myservo.write(pos);              // tell servo to go to position in variable 'pos' 
+  //delay(2000);
+} 
+ 
+void loop() 
+{ 
+    while (pos <= 160){
+      myservo.write(pos++);
+      if(pos == 90)
+        delay(5000);
+      else
+      delay(15);
+    }
+
+    while (pos >= 20){
+      myservo.write(pos--);
+      if(pos == 90)
+        delay(5000);
+      else
+        delay(15);  
+    }
+}
+
+Includes the following Metric thread sizes:
+3 x 0.5mm, 3 x 0.6mm, 4 x 0.7mm, 4 x 0.75mm, 5 x 0.8mm, 5 x 0.9mm, 6 x 0.75mm, 6 x 1.0mm, 7 x 0.75mm, 8 x 1.0mm, 8 x 1.25mm, 10 x 1.25mm, 10 x 1.5mm, 12 x 1.5mm, 12 x 1.75mm
+
+
+
+
+March:
+
+FL ESB opening all tickets to flow to OCS - DB change.
+Uninstall RAD on other machine.
+Windows 10.
+
+May:
+
+RO service and waste type mapping - OCSD client screen.
+
+
+	
+	
+	
